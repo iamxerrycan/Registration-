@@ -33,7 +33,7 @@ function Dashboard() {
       }
     }
     apidata();
-  }, []);
+  }, );
 
   const Exit = () => {
     navigate("../");
