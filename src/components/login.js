@@ -68,7 +68,7 @@ function Login() {
     <div className=" container">
       <form onSubmit={handleSubmit}>
         <div className="reg-container">
-          <h3>LOGIN </h3>
+          <span>LOGIN </span>
 
           <div className="input-form">
             <div className=" input-block">
@@ -114,11 +114,11 @@ function Login() {
 
           <>
             {" "}
-            <p>Don't have an account ? </p>{" "}
-            <a href="./" type="link" className="btnsig">
+            <span>Don't have an account ? </span>{" "}
+            <button href="./" type="link" className="btnsig">
               {" "}
               Registration{" "}
-            </a>{" "}
+            </button>{" "}
           </>
         </div>
       </form>

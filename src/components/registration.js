@@ -64,7 +64,7 @@ function Registration() {
       //dispatch({ type: "REGISTER_USER",payload: inputval });
       //dispatch(add_DATA(inputval))
       //dispatch(register_Data())
-      dispatch(setRegisterData(inputval))
+      dispatch(setRegisterData(inputval));
       navigate("/login");
     }
   };
@@ -75,70 +75,57 @@ function Registration() {
   return (
     <div className=" container">
       <form onSubmit={handleSubmit} className="reg-container">
-        <h3>RESISTRATION </h3>
+        <span>Sign-Up</span>
+        <input
+          type=" text"
+          placeholder="Fullname"
+          onChange={handleChange}
+          value={inputval.fullname}
+          name="fullname"
+        />
 
-        <div className=" input-block">
-          <label className="input-label"> Fullname</label>
-          <input
-            type=" text"
-            placeholder="Fullname"
-            onChange={handleChange}
-            value={inputval.fullname}
-            name="fullname"
-          />
-        </div>
         {error.fullname ? <p className="err-mes">{error.fullname}</p> : null}
 
-        <div className=" input-block">
-          <label className="input-label"> Email</label>
-          <input
-            type="email"
-            placeholder="Email"
-            onChange={handleChange}
-            value={inputval.email}
-            name="email"
-          />
-        </div>
+        <input
+          type="email"
+          placeholder="Email"
+          onChange={handleChange}
+          value={inputval.email}
+          name="email"
+        />
+
         {error.email ? <p className="err-mes">{error.email}</p> : null}
 
-        <div className="input-block">
-          <label className="input-label"> Password </label>
-          <input
-            type="password"
-            placeholder="Password"
-            onChange={handleChange}
-            value={inputval.password}
-            name="password"
-            maxLength={16}
-          />
-        </div>
+        <input
+          type="password"
+          placeholder="Password"
+          onChange={handleChange}
+          value={inputval.password}
+          name="password"
+          maxLength={16}
+        />
+
         {error.password ? <p className="err-mes">{error.password}</p> : null}
 
-        <div className="input-block">
-          <label className="input-label">Confirm Password </label>
-          <input
-            type="password"
-            placeholder="Confirm Password"
-            onChange={handleChange}
-            value={inputval.cpassword}
-            name="cpassword"
-          />
-        </div>
+        <input
+          type="password"
+          placeholder="Confirm Password"
+          onChange={handleChange}
+          value={inputval.cpassword}
+          name="cpassword"
+        />
+
         {error.cpassword ? <p className="err-mes">{error.cpassword}</p> : null}
 
         <button className="btnsig" type="submit">
           signup
         </button>
-        <>
-          <p>Already have an account ? </p>
-          <a href="./login" type="link" className="btnsig">
-            Login
-          </a>
-        </>
+        <button href="./login" type="link" className="btnsig">
+          Already have an account ? Login
+        </button>
       </form>
     </div>
   );
 }
 
-export default (Registration);
-
+export default Registration;
