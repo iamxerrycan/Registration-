@@ -37,25 +37,51 @@ function Registration() {
     //(fullname , email , password , cpassword )= inputval;
 
     const error = {};
-
     if (!inputval.fullname) {
-      error.fullname = " type your proper fullname  ";
+      error.fullname = "Please enter your full name";
+    } else {
+      const fullNameRegex = /^[a-zA-Z\s]+$/;
+      if (!fullNameRegex.test(inputval.fullname)) {
+        error.fullname = "Please enter a valid full name";
+      }
     }
 
     if (!inputval.email) {
-      error.email = " enter proper email";
+      error.email = "Please enter your email";
+    } else {
+      const emailRegex = /\S+@\S+\.\S+/;
+      if (!emailRegex.test(inputval.email)) {
+        error.email = "Please enter a valid email address";
+      }
     }
 
     if (!inputval.password) {
-      error.password = " password is required";
-    }
+      error.password = "Please enter a password";
+    } else {
+      if (inputval.password.length < 8) {
+        error.password = "Password should be at least 8 characters long";
+      }
+      const lowercaseRegex = /[a-z]/;
 
+      const uppercaseRegex = /[A-Z]/;
+      if (
+        !uppercaseRegex.test(inputval.password) ||
+        !lowercaseRegex.test(inputval.password)
+      ) {
+        error.password =
+          "Password should contain at least one upper-lower case letter";
+      }
+
+      const specialCharRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
+      if (!specialCharRegex.test(inputval.password)) {
+        error.password =
+          "Password should contain at least one special character";
+      }
+    }
     if (!inputval.cpassword) {
-      error.cpassword = " password is required";
-    }
-
-    if (inputval.password !== inputval.cpassword) {
-      error.cpassword = " confirm password should be as password ";
+      error.cpassword = "Please confirm your password";
+    } else if (inputval.password !== inputval.cpassword) {
+      error.cpassword = "Passwords do not match";
     }
     if (Object.keys(error).length > 0) {
       setError(error);
