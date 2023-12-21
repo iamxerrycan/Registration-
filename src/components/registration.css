@@ -63,3 +63,15 @@ a{
 .btnsig:hover {
   background-color: #0056b3;
 }
+
+@media only screen and (max-width : 400px){
+  .container{
+    background-color: wheat;
+    width: auto;
+    height: auto;
+  }
+  .reg-container{
+    width: 100%;
+    height: 100%;
+  }
+}

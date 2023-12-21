@@ -66,8 +66,8 @@ function Login() {
 
   return (
     <div className=" container">
-      <form onSubmit={handleSubmit}>
-        <div className="reg-container">
+      <form onSubmit={handleSubmit} className="reg-container">
+        <div >
           <span>LOGIN </span>
 
           <div className="input-form">
@@ -111,15 +111,12 @@ function Login() {
             {" "}
             Login{" "}
           </button>
-
-          <>
             {" "}
             <span>Don't have an account ? </span>{" "}
             <button href="./" type="link" className="btnsig">
               {" "}
               Registration{" "}
             </button>{" "}
-          </>
         </div>
       </form>
     </div>
