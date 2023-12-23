@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import "./registration.css";
+import "./login.css";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setLoginData } from "../Store/actions/logAction";
@@ -64,46 +64,41 @@ function Login() {
     <div className="mainmain">
       <div className=" container">
         <form onSubmit={handleSubmit} className="reg-container">
-          <div>
-            <span>LOGIN </span>
-            <div className="input-form">
-              <div className=" input-block">
-                <input
-                  type="email"
-                  autoComplete="off"
-                  placeholder="Email"
-                  value={inputval.email}
-                  onChange={handleChange}
-                  name="email"
-                />
-              </div>
-              {error.email ? <p className="err-mes">{error.email} </p> : null}
-
-              <div className="input-block">
-                <input
-                  type="password"
-                  autoComplete="off"
-                  placeholder="Password"
-                  value={inputval.password}
-                  onChange={handleChange}
-                  name="password"
-                />
-              </div>
-
-              {error.password ? (
-                <p className="err-mes">{error.password} </p>
-              ) : null}
+          <span>LOGIN </span>
+          <div className="input-form">
+            <div className=" input-block">
+              <input
+                type="email"
+                autoComplete="off"
+                placeholder="Email"
+                value={inputval.email}
+                onChange={handleChange}
+                name="email"
+              />
             </div>
-            <button type="submit" className="btnsig">
-              {" "}
-              Login{" "}
-            </button>{" "}
-            <span>Don't have an account ? </span>{" "}
-            <button href="./" type="link" className="btnsig">
-              {" "}
-              Registration{" "}
-            </button>{" "}
+            {error.email ? <p className="err-mes">{error.email} </p> : null}
+
+            <div className="input-block">
+              <input
+                type="password"
+                autoComplete="off"
+                placeholder="Password"
+                value={inputval.password}
+                onChange={handleChange}
+                name="password"
+              />
+            </div>
+
+            {error.password ? (
+              <p className="err-mes">{error.password} </p>
+            ) : null}
           </div>
+          <button type="submit" className="btnsig">
+            Login
+          </button>
+          <button href="./" type="link" className="btnsig">Don't have ?
+            Registration
+          </button>
         </form>
       </div>
     </div>
