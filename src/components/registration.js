@@ -99,57 +99,61 @@ function Registration() {
   //===========================================================return================================
 
   return (
-    <div className=" container">
-      <form onSubmit={handleSubmit} className="reg-container">
-        <span>Sign-Up</span>
-        <input
-          type=" text"
-          placeholder="Fullname"
-          onChange={handleChange}
-          value={inputval.fullname}
-          name="fullname"
-        />
+    <div className="mainmain">
+      <div className=" container">
+        <form onSubmit={handleSubmit} className="reg-container">
+          <span>Sign-Up</span>
+          <input
+            type=" text"
+            placeholder="Fullname"
+            onChange={handleChange}
+            value={inputval.fullname}
+            name="fullname"
+          />
 
-        {error.fullname ? <p className="err-mes">{error.fullname}</p> : null}
+          {error.fullname ? <p className="err-mes">{error.fullname}</p> : null}
 
-        <input
-          type="email"
-          placeholder="Email"
-          onChange={handleChange}
-          value={inputval.email}
-          name="email"
-        />
+          <input
+            type="email"
+            placeholder="Email"
+            onChange={handleChange}
+            value={inputval.email}
+            name="email"
+          />
 
-        {error.email ? <p className="err-mes">{error.email}</p> : null}
+          {error.email ? <p className="err-mes">{error.email}</p> : null}
 
-        <input
-          type="password"
-          placeholder="Password"
-          onChange={handleChange}
-          value={inputval.password}
-          name="password"
-          maxLength={16}
-        />
+          <input
+            type="password"
+            placeholder="Password"
+            onChange={handleChange}
+            value={inputval.password}
+            name="password"
+            maxLength={16}
+          />
 
-        {error.password ? <p className="err-mes">{error.password}</p> : null}
+          {error.password ? <p className="err-mes">{error.password}</p> : null}
 
-        <input
-          type="password"
-          placeholder="Confirm Password"
-          onChange={handleChange}
-          value={inputval.cpassword}
-          name="cpassword"
-        />
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            onChange={handleChange}
+            value={inputval.cpassword}
+            name="cpassword"
+          />
 
-        {error.cpassword ? <p className="err-mes">{error.cpassword}</p> : null}
+          {error.cpassword ? (
+            <p className="err-mes">{error.cpassword}</p>
+          ) : null}
 
-        <button className="btnsig" type="submit">
-          signup
-        </button>
-        <button href="./login" type="link" className="btnsig">
-          Already have an account ? Login
-        </button>
-      </form>
+          <button className="btnsig" type="submit">
+            signup
+          </button>
+          <button href="./login" type="link" className="btnsig">
+            Already have an account ? Login
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

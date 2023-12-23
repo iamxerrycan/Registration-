@@ -4,10 +4,8 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setLoginData } from "../Store/actions/logAction";
 
-
 function Login() {
   const navigate = useNavigate();
-  
 
   //==============================================NAVIGATION PART ===============================consy
   const [error, setError] = useState({});
@@ -19,7 +17,7 @@ function Login() {
 
   //const {email , password} = inputval;
   const registerData = useSelector((state) => state.register.registerData);
-  
+
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
@@ -54,10 +52,8 @@ function Login() {
     if (Object.keys(error).length > 0) {
       setError(error);
       return;
-    } 
-    else {
-      
-      dispatch(setLoginData(inputval))
+    } else {
+      dispatch(setLoginData(inputval));
 
       navigate("/dashboard");
     }
@@ -65,62 +61,53 @@ function Login() {
   };
 
   return (
-    <div className=" container">
-      <form onSubmit={handleSubmit} className="reg-container">
-        <div >
-          <span>LOGIN </span>
+    <div className="mainmain">
+      <div className=" container">
+        <form onSubmit={handleSubmit} className="reg-container">
+          <div>
+            <span>LOGIN </span>
+            <div className="input-form">
+              <div className=" input-block">
+                <input
+                  type="email"
+                  autoComplete="off"
+                  placeholder="Email"
+                  value={inputval.email}
+                  onChange={handleChange}
+                  name="email"
+                />
+              </div>
+              {error.email ? <p className="err-mes">{error.email} </p> : null}
 
-          <div className="input-form">
-            <div className=" input-block">
-              <label htmlFor="email" className="input-label">
-                {" "}
-                Email
-              </label>
-              <input
-                type="email"
-                autoComplete="off"
-                placeholder="Email"
-                value={inputval.email}
-                onChange={handleChange}
-                name="email"
-              />
+              <div className="input-block">
+                <input
+                  type="password"
+                  autoComplete="off"
+                  placeholder="Password"
+                  value={inputval.password}
+                  onChange={handleChange}
+                  name="password"
+                />
+              </div>
+
+              {error.password ? (
+                <p className="err-mes">{error.password} </p>
+              ) : null}
             </div>
-            {error.email ? <p className="err-mes">{error.email} </p> : null}
-
-            <div className="input-block">
-              <label htmlFor="password" className="input-label">
-                {" "}
-                Password{" "}
-              </label>
-              <input
-                type="password"
-                autoComplete="off"
-                placeholder="Password"
-                value={inputval.password}
-                onChange={handleChange}
-                name="password"
-              />
-            </div>
-
-            {error.password ? (
-              <p className="err-mes">{error.password} </p>
-            ) : null}
-          </div>
-
-          <button type="submit" className="btnsig">
-            {" "}
-            Login{" "}
-          </button>
-            {" "}
+            <button type="submit" className="btnsig">
+              {" "}
+              Login{" "}
+            </button>{" "}
             <span>Don't have an account ? </span>{" "}
             <button href="./" type="link" className="btnsig">
               {" "}
               Registration{" "}
             </button>{" "}
-        </div>
-      </form>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
 
-export default (Login);
+export default Login;
