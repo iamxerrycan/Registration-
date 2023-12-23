@@ -117,11 +117,15 @@ tr ,td ,th{
 @media only screen and(max-width: 400px) {
   .main-dash{
     height: auto;
-    width: 100%;
+    width: auto;
     padding: 0;
+ 
     margin: 0;
   }
   .api-data , .data-from-redux{
     width: 100%;
+    height: auto;
+    overflow-x: auto;
+    overflow-y: auto;
   }
 }
