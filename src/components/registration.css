@@ -73,9 +73,14 @@ a {
 
 @media only screen and (max-width: 400px) {
   .container {
-    background-color: wheat;
     width: auto;
+    padding: 15px;
+    padding-top: 20px;
     height: auto;
+  }
+  .mainmain{
+    background-image: linear-gradient(to right, #5b90fa, #c43af2);
+    height: 80vh;
   }
   .reg-container {
     width: 100%;
