@@ -60,6 +60,11 @@ function Login() {
     //localStorage.setItem("userdata", JSON.stringify(loginData));
   };
 
+  const handleRes=(e)=>{
+    e.preventDefault()
+    navigate("/")
+  }
+
   return (
     <div className="mainmain">
       <div className=" container">
@@ -96,7 +101,7 @@ function Login() {
           <button type="submit" className="btnsig">
             Login
           </button>
-          <button href="./" type="link" className="btnsig">Don't have ?
+          <button href="./" onClick={handleRes} type="link" className="btnsig">Don't have ?
             Registration
           </button>
         </form>

@@ -43,6 +43,8 @@ function Registration() {
       const fullNameRegex = /^[a-zA-Z\s]+$/;
       if (!fullNameRegex.test(inputval.fullname)) {
         error.fullname = "Please enter a valid full name";
+      }else if(inputval.fullname.length < 8) {
+        error.fullname = "fullname should be at least 8 characters long";
       }
     }
 
@@ -95,6 +97,10 @@ function Registration() {
     }
   };
 
+  const handleLogin=(e)=>{
+    e.preventDefault()
+    navigate("/login")
+  }
   //console.log(login.user);
   //===========================================================return================================
 
@@ -149,7 +155,7 @@ function Registration() {
           <button className="btnsig" type="submit">
             signup
           </button>
-          <button href="./login" type="link" className="btnsig">
+          <button href="./login" onClick={handleLogin} type="link" className="btnsig">
             Already have an account ? Login
           </button>
         </form>

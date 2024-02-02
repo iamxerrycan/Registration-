@@ -36,7 +36,7 @@ const Dashboard = () => {
   return (
     <div className="main-dash">
       <div className="data-from-redux">
-        <h4 style={{color : "black"}}>Data From Redux Store!</h4>
+        <h4 style={{color : "white"}}>Data From Redux Store!</h4>
         <table className="first-table">
           <thead className="thead">
             <tr>
@@ -58,7 +58,7 @@ const Dashboard = () => {
       </div>
 
       <div className="api-data">
-      <h4 style={{color : "black"}}>Data From Api!</h4>
+      <h4 style={{color : "white"}}>Data From Api!</h4>
         {loading ? (
           <p>Loading...</p>
         ) : (
