@@ -1,5 +1,5 @@
 .mainmain {
-  background-image: linear-gradient(to right, #5b90fa, #c43af2);
+  background-image: linear-gradient(to right, #0fb37c, #9cf473); 
 }
 
 .container {
@@ -7,7 +7,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  color: linear-gradient(to right, #5b90fa, #c43af2);
+  color: linear-gradient(to right, #0fb37c, #9cf473); 
 }
 
 span {
@@ -21,7 +21,7 @@ input {
   border: none;
   box-sizing: border-box;
   border: none;
-  border-bottom: 2px solid #c587fa;
+  border-bottom: 2px solid #bbf762;
 }
 .reg-container {
   background-image: linear-gradient(to right, #ffffff, #ffffff);
@@ -65,7 +65,7 @@ a {
   text-align: center;
   border: none;
   border-radius: 5px;
-  background-image: linear-gradient(to right, #5b90fa, #c43af2);
+  background-image: linear-gradient(to right, #0fb37c, #9cf473); 
   color: #fff;
   text-decoration: none;
   margin-top: 10px;
@@ -79,7 +79,7 @@ a {
     height: 70%;
   }
   .mainmain{
-    background-image: linear-gradient(to right, #5b90fa, #c43af2);
+    background-image: linear-gradient(to right, #0fb37c, #9cf473); 
     height: 100vh;
   }
   .reg-container {
