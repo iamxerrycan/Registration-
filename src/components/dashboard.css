@@ -43,11 +43,22 @@
 }
 
 button {
-  background-color: rgb(38, 206, 114);
+  /* background-color: rgb(38, 206, 114);
   color: rgb(255, 255, 255);
   padding: 10px 20px;
   border: none;
-  cursor: pointer;
+  cursor: pointer; */
+
+  display: block;
+  width: 90%;
+  padding: 10px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  background-image: linear-gradient(to right, #0fb37c, #9cf473); 
+  color: #fff;
+  text-decoration: none;
+  margin-top: 10px;
 }
 
 button:hover {

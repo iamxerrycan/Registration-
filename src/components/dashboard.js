@@ -123,7 +123,7 @@ const Dashboard = () => {
     <div className="main-dash">
       <div className="container-dash">
         {" "}
-        <img style={{width: "200px" , height:"200px", borderRadius:"50%"}} src={logo} alt="User Logo" />
+        <img style={{width: "170px" , height:"170px", borderRadius:"50%"}} src={logo} alt="User Logo" />
       
       <div className="data-from-redux">
         <div className="user-info">
