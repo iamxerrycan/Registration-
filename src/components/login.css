@@ -2,6 +2,11 @@
   background-image: grey; 
   }
   
+  .input-block{
+    display: flex;
+    flex-direction: row;
+  }
+
   .container {
     display: flex;
     justify-content: center;

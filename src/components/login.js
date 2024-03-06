@@ -3,10 +3,16 @@ import "./login.css";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setLoginData } from "../Store/actions/logAction";
+import { Eye, EyeOff } from "dragon-eye";
 
 function Login() {
   const navigate = useNavigate();
+  const [show, setShow] = useState(false);
 
+  const toggleClick = (e) => {
+    e.preventDefault();
+    setShow(!show);
+  };
   //==============================================NAVIGATION PART ===============================consy
   const [error, setError] = useState({});
 
@@ -60,10 +66,10 @@ function Login() {
     //localStorage.setItem("userdata", JSON.stringify(loginData));
   };
 
-  const handleRes=(e)=>{
-    e.preventDefault()
-    navigate("/")
-  }
+  const handleRes = (e) => {
+    e.preventDefault();
+    navigate("/");
+  };
 
   return (
     <div className="mainmain">
@@ -85,13 +91,30 @@ function Login() {
 
             <div className="input-block">
               <input
-                type="password"
+                type={show? "text" :"password"}
                 autoComplete="off"
                 placeholder="Password"
                 value={inputval.password}
                 onChange={handleChange}
                 name="password"
               />
+
+              <button
+                style={{
+                  border: "none",
+                  width: "10px",
+                  background: "none",
+                  margin: "0",
+                  padding: "0",
+                }}
+                onClick={toggleClick}
+              >
+                {show ? (
+                  <Eye width="20px" height="20px" colour="#0e8248"/>
+                ) : (
+                  <EyeOff width="20px" height="20px" colour="#0e8248"/>
+                )}
+              </button>
             </div>
 
             {error.password ? (
@@ -101,8 +124,8 @@ function Login() {
           <button type="submit" className="btnsig">
             Login
           </button>
-          <button href="./" onClick={handleRes} type="link" className="btnsig">Don't have ?
-            Registration
+          <button href="./" onClick={handleRes} type="link" className="btnsig">
+            Don't have ? Registration
           </button>
         </form>
       </div>

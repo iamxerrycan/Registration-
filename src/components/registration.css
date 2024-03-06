@@ -87,3 +87,8 @@ a {
     height: 90%;
   }
 }
+
+.showhide{
+  display: flex;
+  flex-direction: row;
+}

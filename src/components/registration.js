@@ -3,11 +3,18 @@ import "./registration.css";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setRegisterData } from "../Store/actions/regAction";
+import { Eye, EyeOff } from "dragon-eye";
 
 function Registration() {
   // const user = useSelector(state => state.user)
   const navigate = useNavigate();
   const [error, setError] = useState("");
+  const [show, setShow] = useState(false);
+
+  const toggleClick = (e) => {
+    e.preventDefault();
+    setShow(!show);
+  };
 
   const dispatch = useDispatch();
 
@@ -43,7 +50,7 @@ function Registration() {
       const fullNameRegex = /^[a-zA-Z\s]+$/;
       if (!fullNameRegex.test(inputval.fullname)) {
         error.fullname = "Please enter a valid full name";
-      }else if(inputval.fullname.length < 8) {
+      } else if (inputval.fullname.length < 8) {
         error.fullname = "fullname should be at least 8 characters long";
       }
     }
@@ -97,10 +104,10 @@ function Registration() {
     }
   };
 
-  const handleLogin=(e)=>{
-    e.preventDefault()
-    navigate("/login")
-  }
+  const handleLogin = (e) => {
+    e.preventDefault();
+    navigate("/login");
+  };
   //console.log(login.user);
   //===========================================================return================================
 
@@ -116,7 +123,6 @@ function Registration() {
             value={inputval.fullname}
             name="fullname"
           />
-
           {error.fullname ? <p className="err-mes">{error.fullname}</p> : null}
 
           <input
@@ -129,8 +135,8 @@ function Registration() {
 
           {error.email ? <p className="err-mes">{error.email}</p> : null}
 
-          <input
-            type="password"
+         <div className="showhide"> <input
+            type={show ? "text" : "password"}
             placeholder="Password"
             onChange={handleChange}
             value={inputval.password}
@@ -138,15 +144,39 @@ function Registration() {
             maxLength={16}
           />
 
+          <button
+            style={{ border: "none",width:"10px", background: "none" ,margin:"0", padding:"0" }}
+            onClick={toggleClick}
+          >
+            {show ? (
+              <Eye width="20px" height="20px" colour="#0e8248"/>
+            ) : (
+              <EyeOff width="20px" height="20px" colour="#0e8248" />
+            )}
+          </button></div>
+
           {error.password ? <p className="err-mes">{error.password}</p> : null}
 
-          <input
-            type="password"
+         <div className="showhide">
+         <input
+            type={show ? "text" : "password"}
             placeholder="Confirm Password"
             onChange={handleChange}
             value={inputval.cpassword}
             name="cpassword"
           />
+
+          <button
+            style={{ border: "none", width:"10px", background: "none", margin:"0", padding:"0" }}
+            onClick={toggleClick}
+          >
+            {show ? (
+              <Eye width="20px" height="20px" colour="#0e8248"/>
+            ) : (
+              <EyeOff width="20px" height="20px" colour="#0e8248"/>
+            )}
+          </button>
+         </div>
 
           {error.cpassword ? (
             <p className="err-mes">{error.cpassword}</p>
@@ -155,7 +185,12 @@ function Registration() {
           <button className="btnsig" type="submit">
             signup
           </button>
-          <button href="./login" onClick={handleLogin} type="link" className="btnsig">
+          <button
+            href="./login"
+            onClick={handleLogin}
+            type="link"
+            className="btnsig"
+          >
             Already have an account ? Login
           </button>
         </form>
