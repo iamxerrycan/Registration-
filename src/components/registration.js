@@ -149,9 +149,9 @@ function Registration() {
             onClick={toggleClick}
           >
             {show ? (
-              <Eye width="20px" height="20px" colour="#0e8248"/>
+              <Eye  colour="#0e8248"/>
             ) : (
-              <EyeOff width="20px" height="20px" colour="#0e8248" />
+              <EyeOff  colour="#0e8248" />
             )}
           </button></div>
 
@@ -171,9 +171,9 @@ function Registration() {
             onClick={toggleClick}
           >
             {show ? (
-              <Eye width="20px" height="20px" colour="#0e8248"/>
+              <Eye  colour="#0e8248"/>
             ) : (
-              <EyeOff width="20px" height="20px" colour="#0e8248"/>
+              <EyeOff  colour="#0e8248"/>
             )}
           </button>
          </div>

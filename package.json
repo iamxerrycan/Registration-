@@ -9,7 +9,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
-    "dragon-eye": "^1.1.5",
+    "dragon-eye": "^1.1.8",
     "formik": "^2.2.9",
     "i": "^0.3.7",
     "react": "^18.2.0",
