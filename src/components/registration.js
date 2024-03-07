@@ -135,48 +135,54 @@ function Registration() {
 
           {error.email ? <p className="err-mes">{error.email}</p> : null}
 
-         <div className="showhide"> <input
-            type={show ? "text" : "password"}
-            placeholder="Password"
-            onChange={handleChange}
-            value={inputval.password}
-            name="password"
-            maxLength={16}
-          />
-
-          <button
-            style={{ border: "none",width:"10px", background: "none" ,margin:"0", padding:"0" }}
-            onClick={toggleClick}
-          >
-            {show ? (
-              <Eye  colour="#0e8248"/>
-            ) : (
-              <EyeOff  colour="#0e8248" />
-            )}
-          </button></div>
+          <div className="showhide">
+            {" "}
+            <input
+              type={show ? "text" : "password"}
+              placeholder="Password"
+              onChange={handleChange}
+              value={inputval.password}
+              name="password"
+              maxLength={16}
+            />
+            <button
+              style={{
+                border: "none",
+                width: "10px",
+                background: "none",
+                margin: "0",
+                padding: "0",
+              }}
+              onClick={toggleClick}
+            >
+              {show ? <Eye colour="#0e8248" /> : <EyeOff colour="#0e8248" />}
+            </button>
+          </div>
 
           {error.password ? <p className="err-mes">{error.password}</p> : null}
 
-         <div className="showhide">
-         <input
-            type={show ? "text" : "password"}
-            placeholder="Confirm Password"
-            onChange={handleChange}
-            value={inputval.cpassword}
-            name="cpassword"
-          />
+          <div className="showhide">
+            <input
+              type={show ? "text" : "password"}
+              placeholder="Confirm Password"
+              onChange={handleChange}
+              value={inputval.cpassword}
+              name="cpassword"
+            />
 
-          <button
-            style={{ border: "none", width:"10px", background: "none", margin:"0", padding:"0" }}
-            onClick={toggleClick}
-          >
-            {show ? (
-              <Eye  colour="#0e8248"/>
-            ) : (
-              <EyeOff  colour="#0e8248"/>
-            )}
-          </button>
-         </div>
+            <button
+              style={{
+                border: "none",
+                width: "10px",
+                background: "none",
+                margin: "0",
+                padding: "0",
+              }}
+              onClick={toggleClick}
+            >
+              {show ? <Eye colour="#0e8248" /> : <EyeOff colour="#0e8248" />}
+            </button>
+          </div>
 
           {error.cpassword ? (
             <p className="err-mes">{error.cpassword}</p>

@@ -76,51 +76,43 @@ function Login() {
       <div className=" container">
         <form onSubmit={handleSubmit} className="reg-container">
           <span>LOGIN </span>
-          <div className="input-form">
-            <div className=" input-block">
-              <input
-                type="email"
-                autoComplete="off"
-                placeholder="Email"
-                value={inputval.email}
-                onChange={handleChange}
-                name="email"
-              />
-            </div>
-            {error.email ? <p className="err-mes">{error.email} </p> : null}
 
-            <div className="input-block">
-              <input
-                type={show? "text" :"password"}
-                autoComplete="off"
-                placeholder="Password"
-                value={inputval.password}
-                onChange={handleChange}
-                name="password"
-              />
+          <input
+            type="email"
+            autoComplete="off"
+            placeholder="Email"
+            value={inputval.email}
+            onChange={handleChange}
+            name="email"
+          />
 
-              <button
-                style={{
-                  border: "none",
-                  width: "10px",
-                  background: "none",
-                  margin: "0",
-                  padding: "0",
-                }}
-                onClick={toggleClick}
-              >
-                {show ? (
-                  <Eye colour="#0e8248"/>
-                ) : (
-                  <EyeOff  colour="#0e8248"/>
-                )}
-              </button>
-            </div>
+          {error.email ? <p className="err-mes">{error.email} </p> : null}
+          <div className="showhide">
+            <input
+              type={show ? "text" : "password"}
+              autoComplete="off"
+              placeholder="Password"
+              value={inputval.password}
+              onChange={handleChange}
+              name="password"
+            />
 
-            {error.password ? (
-              <p className="err-mes">{error.password} </p>
-            ) : null}
+            <button
+              style={{
+                border: "none",
+                width: "10px",
+                background: "none",
+                margin: "0",
+                padding: "0",
+              }}
+              onClick={toggleClick}
+            >
+              {show ? <Eye colour="#0e8248" /> : <EyeOff colour="#0e8248" />}
+            </button>
           </div>
+
+          {error.password ? <p className="err-mes">{error.password} </p> : null}
+
           <button type="submit" className="btnsig">
             Login
           </button>

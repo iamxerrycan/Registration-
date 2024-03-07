@@ -76,6 +76,11 @@
     margin-top: 10px;
   }
   
+  .showhide{
+    display: flex;
+    flex-direction: row;
+  }
+
   @media only screen and (max-width: 400px) {
     .container {
       width: auto;
